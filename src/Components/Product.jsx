@@ -40,7 +40,7 @@ const Product = (props) => {
             </div>
           </div>
           <div className="col-md-1">
-            <hr className={styles.hr} />
+            <div className={styles.hr} />
           </div>
           <div className="col-md-4 my-3 d-flex flex-column justify-content-between">
             <div>
@@ -53,9 +53,9 @@ const Product = (props) => {
               <h3 className={styles.text}>{time_remaining} minutes</h3>
             </div>
             <div className="d-flex my-3">
-              <h2>BIDS PLACED</h2>
-              {/* <hr /> */}
-              <h2 className="mx-3">0{bid_placed}</h2>
+              <h2 className={styles.placed}>BIDS PLACED</h2>
+              <div className={`${styles.hrs} mx-3`}/>
+              <h2 className="mx-1">0{bid_placed}</h2>
             </div>
           </div>
         </div>
