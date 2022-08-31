@@ -3,7 +3,8 @@ import Heading from "./Heading";
 import Product from "./Product";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const [heading, setHeading] = useState([]);
+  const [product, setProduct] = useState([]);
   const getData = async () => {
     const response = await fetch(
       `https://backend-ohlocal-development.umnsbhcb5nb6a.ap-south-1.cs.amazonlightsail.com/api/test_web_assignment/`,
@@ -13,7 +14,8 @@ const Home = () => {
     );
     const json = await response.json();
     console.log(Object.values(json));
-    setData(Object.values(json));
+    setHeading(Object.values(json));
+    setProduct(Object.values(json));
   };
 
   useEffect(() => {
@@ -22,17 +24,23 @@ const Home = () => {
 
   return (
     <>
-      {data.map((element) => {
+      {heading.slice(1,2).map((element, index) => {
         return (
           <div>
-            <Heading key={element.heading}
+            <Heading key={index}
               heading={element.heading}
               sub_heading={element.sub_heading}
               imageUrl={element.svg}
-            />
-            <Product
+              />
+          </div>
+            );
+          })}
+      {product.slice(2,3).map((element, index) => {
+        return (
+          <div>
+            <Product key={index}
               product_title={element.product_title}
-              sub_heading={element.product_pipeline}
+              product_pipeline={element.product_pipeline}
               main_product_svg={element.main_product_svg}
               online_price={element.online_price}
               quantity={element.quantity}
