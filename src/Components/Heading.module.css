@@ -1,6 +1,60 @@
 .container{
-    width: 80%
+    background-color: red;
+    width: 80%;
+    animation: animate 10s linear infinite;
 }
+
+@keyframes animate {
+    0%{
+        background-color: wheat;
+        color: black;
+    }
+    20%{
+        background-color: orange;
+        color: black;
+    }
+    40%{
+        background-color: rgb(109, 109, 14);
+        color: black;
+    }
+    60%{
+        background-color: rgb(10, 34, 10);
+        color: white;
+    }
+    80%{
+        background-color: darkblue;
+        color: white;
+    }
+    100%{
+        background-color: black;
+        color: white;
+    }
+  }
+  
+  .image{
+    animation: move 10s linear infinite;
+  }
+
+  @keyframes move {
+      0%{
+        filter: drop-shadow(2px 4px 6px white);
+          }
+          20%{
+            filter: drop-shadow(2px 4px 6px white);
+          }
+          40%{
+              filter: drop-shadow(2px 4px 6px black);
+          }
+          60%{
+             filter: invert();
+          }
+          80%{
+              filter: invert();
+          }
+          100%{
+              filter: invert();
+          }
+        }
 
 @media screen and (max-width: 768px) {
     .container{
