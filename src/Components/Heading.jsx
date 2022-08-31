@@ -7,7 +7,7 @@ const Heading = (props) => {
   return (
     <>
       <div
-        className={`${styles.container} d-flex justify-content-center align-items-center m-auto`}
+        className={`${styles.container} d-flex justify-content-center align-items-center m-auto my-3`}
       >
         <img className={styles.image} src={imageUrl} alt="" />
         <div className="d-flex flex-column">
